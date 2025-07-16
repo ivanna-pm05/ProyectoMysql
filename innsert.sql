@@ -1,4 +1,3 @@
-
 INSERT INTO countries (name, alfaisotwo, alfaisothree, isocode) VALUES 
 ('Afganistán', 'AF', 'AFG', 'AFG'),
 ('Albania', 'AL', 'ALB', 'ALB'),
@@ -1965,27 +1964,27 @@ INSERT INTO companies (id, type_id, name, category_id, city_id, audience_id, cel
 ('COMP1035', 1, 'EcoPack', 19, 'US-FL02', 19, '+13055550003', 'sustainable@ecopack.com'),
 ('COMP1036', 6, 'MediTech', 20, '05001', 20, '+573123456789', 'health@meditech.com');            
 
-INSERT INTO products (name, detail, category_id, image) VALUES
-('Quantum Laptop X', '16" 1TB SSD 32GB RAM, GPU RTX 4080', 1, 'quantum_x.jpg'),
-('Trufa Negra Premium', '100g cosecha 2023 origen Francia', 2, 'trufa_negra.jpg'),
-('Serum Vitamina C', '30ml 20% concentración + ácido hialurónico', 3, 'serum_vitc.jpg'),
-('Jeans Reciclados', 'Hechos con 8 botellas plásticas recicladas', 4, 'jeans_eco.jpg'),
-('Termostato Inteligente', 'WiFi, compatibilidad con Alexa/Google', 5, 'termostato_smart.jpg'),
-('Curso Blockchain Pro', 'Certificación 100 horas con casos reales', 6, 'curso_blockchain.jpg'),
-('Almacenamiento Enterprise', '10TB, cifrado AES-256, SLA 99.99%', 7, 'storage_enterprise.jpg'),
-('Kit Robótica Educativa', '12 proyectos STEM para niños 8-12 años', 8, 'kit_robotica.jpg'),
-('Alerón Deportivo', 'Fibra de carbono para Tesla Model 3', 9, 'aleron_tesla.jpg'),
-('Violín Profesional', 'Madera de arce envejecida 5 años', 10, 'violin_pro.jpg'),
-('Kit Hidroponía', 'Sistema completo para 12 plantas', 11, 'kit_hidroponia.jpg'),
-('Set Masajes Ayurveda', '10 aceites esenciales + guía certificada', 12, 'set_ayurveda.jpg'),
-('Bicicleta de Montaña', 'Suspensión full, cuadro de titanio', 13, 'bici_montana.jpg'),
-('Suscripción BookClub', 'Acceso ilimitado a 50,000+ libros', 14, 'bookclub_sub.jpg'),
-('Cama Ortopédica Canina', 'Memory foam, tamaño XXL', 15, 'cama_ortopedica.jpg'),
-('Panel Solar 500W', 'Monocristalino 24V con microinversor', 16, 'panel_solar.jpg'),
-('Set Acuarelas Profesionales', '36 colores luzfast + pinceles', 17, 'acuarelas_pro.jpg'),
-('Experiencia Glaciar', 'Tour 5 días en Patagonia con guía experto', 18, 'tour_glaciar.jpg'),
-('Kit Zero Waste', '20 productos reutilizables para hogar', 19, 'kit_zerowaste.jpg'),
-('Monitor Cardíaco', 'ECG portátil con IA para diagnóstico', 20, 'monitor_cardiaco.jpg');
+INSERT INTO products (name, detail, price, category_id, image) VALUES
+('Quantum Laptop X', '16" 1TB SSD 32GB RAM, GPU RTX 4080', 2499.99, 1, 'quantum_x.jpg'),
+('Trufa Negra Premium', '100g cosecha 2023 origen Francia', 189.99, 2, 'trufa_negra.jpg'),
+('Serum Vitamina C', '30ml 20% concentración + ácido hialurónico', 49.99, 3, 'serum_vitc.jpg'),
+('Jeans Reciclados', 'Hechos con 8 botellas plásticas recicladas', 89.99, 4, 'jeans_eco.jpg'),
+('Termostato Inteligente', 'WiFi, compatibilidad con Alexa/Google', 129.99, 5, 'termostato_smart.jpg'),
+('Curso Blockchain Pro', 'Certificación 100 horas con casos reales', 599.99, 6, 'curso_blockchain.jpg'),
+('Almacenamiento Enterprise', '10TB, cifrado AES-256, SLA 99.99%', 1299.99, 7, 'storage_enterprise.jpg'),
+('Kit Robótica Educativa', '12 proyectos STEM para niños 8-12 años', 149.99, 8, 'kit_robotica.jpg'),
+('Alerón Deportivo', 'Fibra de carbono para Tesla Model 3', 799.99, 9, 'aleron_tesla.jpg'),
+('Violín Profesional', 'Madera de arce envejecida 5 años', 3499.99, 10, 'violin_pro.jpg'),
+('Kit Hidroponía', 'Sistema completo para 12 plantas', 219.99, 11, 'kit_hidroponia.jpg'),
+('Set Masajes Ayurveda', '10 aceites esenciales + guía certificada', 79.99, 12, 'set_ayurveda.jpg'),
+('Bicicleta de Montaña', 'Suspensión full, cuadro de titanio', 4599.99, 13, 'bici_montana.jpg'),
+('Suscripción BookClub', 'Acceso ilimitado a 50,000+ libros', 14.99, 14, 'bookclub_sub.jpg'),
+('Cama Ortopédica Canina', 'Memory foam, tamaño XXL', 129.99, 15, 'cama_ortopedica.jpg'),
+('Panel Solar 500W', 'Monocristalino 24V con microinversor', 299.99, 16, 'panel_solar.jpg'),
+('Set Acuarelas Profesionales', '36 colores luzfast + pinceles', 129.99, 17, 'acuarelas_pro.jpg'),
+('Experiencia Glaciar', 'Tour 5 días en Patagonia con guía experto', 1999.99, 18, 'tour_glaciar.jpg'),
+('Kit Zero Waste', '20 productos reutilizables para hogar', 89.99, 19, 'kit_zerowaste.jpg'),
+('Monitor Cardíaco', 'ECG portátil con IA para diagnóstico', 349.99, 20, 'monitor_cardiaco.jpg');
 
 INSERT INTO customers (name, city_id, audience_id, cellphone, email, address) VALUES
 ('Tech Ventures LLC', 'US-CA01', 1, '+14085556666', 'ceo@techventures.com', '2000 Silicon Blvd Suite 300'),
@@ -2190,26 +2189,26 @@ INSERT INTO quality_products (product_id, customer_id, poll_id, company_id, date
 (20, 10, 20, 'COMP1036', '2025-12-31 23:59:00', 4.6);
 
 INSERT INTO companyproducts (company_id, product_id, price, unitofmeasure_id) VALUES
-('COMP1017', 1, 2199.99, 1),
-('COMP1018', 2, 89.99, 7),
-('COMP1019', 3, 49.99, 3),
-('COMP1020', 4, 79.99, 1),
-('COMP1021', 5, 129.99, 1),
-('COMP1022', 6, 299.99, 11),
-('COMP1023', 7, 199.99, 12),
-('COMP1024', 8, 89.99, 2),
-('COMP1025', 9, 349.99, 1),
-('COMP1026', 10, 1599.99, 1),
-('COMP1027', 11, 129.99, 2),
-('COMP1028', 12, 59.99, 3),
-('COMP1029', 13, 2499.99, 1),
-('COMP1030', 14, 14.99, 4),
-('COMP1031', 15, 129.99, 1),
-('COMP1032', 16, 299.99, 1),
-('COMP1033', 17, 39.99, 3),
-('COMP1034', 18, 1799.99, 13),
-('COMP1035', 19, 49.99, 2),
-('COMP1036', 20, 399.99, 1);
+('COMP1017', 1, 2499.99, 1),       -- Quantum Laptop X (antes 2199.99)
+('COMP1018', 2, 189.99, 7),         -- Trufa Negra Premium (antes 89.99)
+('COMP1019', 3, 49.99, 3),          -- Serum Vitamina C (igual)
+('COMP1020', 4, 89.99, 1),          -- Jeans Reciclados (antes 79.99)
+('COMP1021', 5, 129.99, 1),         -- Termostato Inteligente (igual)
+('COMP1022', 6, 599.99, 11),        -- Curso Blockchain Pro (antes 299.99)
+('COMP1023', 7, 1299.99, 12),       -- Almacenamiento Enterprise (antes 199.99)
+('COMP1024', 8, 149.99, 2),         -- Kit Robótica Educativa (antes 89.99)
+('COMP1025', 9, 799.99, 1),         -- Alerón Deportivo (antes 349.99)
+('COMP1026', 10, 3499.99, 1),       -- Violín Profesional (antes 1599.99)
+('COMP1027', 11, 219.99, 2),        -- Kit Hidroponía (antes 129.99)
+('COMP1028', 12, 79.99, 3),         -- Set Masajes Ayurveda (antes 59.99)
+('COMP1029', 13, 4599.99, 1),       -- Bicicleta de Montaña (antes 2499.99)
+('COMP1030', 14, 14.99, 4),         -- Suscripción BookClub (igual)
+('COMP1031', 15, 129.99, 1),        -- Cama Ortopédica Canina (igual)
+('COMP1032', 16, 299.99, 1),        -- Panel Solar 500W (igual)
+('COMP1033', 17, 129.99, 3),        -- Set Acuarelas Profesionales (antes 39.99)
+('COMP1034', 18, 1999.99, 13),      -- Experiencia Glaciar (antes 1799.99)
+('COMP1035', 19, 89.99, 2),         -- Kit Zero Waste (antes 49.99)
+('COMP1036', 20, 349.99, 1);        -- Monitor Cardíaco (antes 399.99)
 
 INSERT INTO favorites (customer_id, company_id) VALUES
 (1, 'COMP1017'), (1, 'COMP1023'),
@@ -2283,3 +2282,55 @@ INSERT INTO audiencebenefits (audience_id, benefit_id) VALUES
 (18, 14),
 (19, 16), 
 (20, 19);
+
+-- Membresías para empresas/startups
+INSERT INTO customers_memberships (customer_id, membership_id, period_id, start_date, end_date) VALUES
+(1, 5, 8, '2023-01-01', '2023-12-31'),
+(4, 2, 7, '2023-03-15', '2023-09-14'),
+(5, 3, 6, '2023-06-01', '2023-08-31'),
+(7, 17, 4, '2023-10-01', '2023-10-31'),
+(9, 5, 8, '2023-02-01', '2024-01-31'),
+(2, 4, 6, '2023-04-01', '2023-06-30'),
+(3, 4, 4, '2023-11-01', '2023-11-30'),
+(12, 2, 8, '2023-05-01', '2024-04-30'),
+(17, 12, 7, '2023-07-01', '2023-12-31'),
+(18, 9, 8, '2023-01-15', '2024-01-14'),
+(6, 7, 8, '2023-08-01', '2024-07-31'),
+(15, 3, 4, '2023-09-01', '2023-09-30'),
+(20, 18, 8, '2023-03-01', '2024-02-29'),
+(8, 8, 8, '2023-01-01', '2023-12-31'),
+(10, 8, 7, '2023-04-01', '2023-09-30'),
+(11, 14, 6, '2023-05-15', '2023-08-14'),
+(14, 10, 8, '2023-02-01', '2024-01-31'),
+(16, 16, 7, '2023-06-01', '2023-11-30'),
+(19, 8, 8, '2023-01-01', '2023-12-31');
+
+-- Membresías activas (vigentes hoy)
+INSERT INTO customers_memberships (customer_id, membership_id, period_id, start_date, end_date) VALUES
+(1, 1, 4, '2023-10-01', '2024-01-31'),
+(2, 2, 4, '2023-11-01', '2023-11-30'),
+(3, 3, 8, '2023-01-01', '2023-12-31'),
+(4, 4, 6, '2023-11-01', '2024-01-31'),
+(5, 1, 4, '2023-09-01', '2023-10-31'),
+(6, 2, 4, '2023-12-01', '2024-01-31');
+INSERT INTO customers_memberships (customer_id, membership_id, period_id, start_date, end_date) VALUES
+(1, 3, 4, '2025-06-01', '2025-06-30'),
+(2, 9, 4, '2025-07-01', '2025-07-31'),
+(3, 2, 4, '2025-07-01', '2025-07-31'),
+(4, 10, 4, '2025-06-15', '2025-07-14'),
+(5, 1, 7, '2025-01-01', '2025-06-30'),
+(6, 9, 7, '2025-07-01', '2025-12-31'),
+(7, 4, 4, '2025-07-01', '2025-07-31'),
+(8, 10, 4, '2025-07-01', '2025-07-31'),
+(9, 3, 4, '2025-07-01', '2025-07-31'),
+(10, 9, 4, '2025-07-01', '2025-07-31'),
+(11, 5, 4, '2025-07-01', '2025-07-31'),
+(12, 10, 4, '2025-07-01', '2025-07-31'),
+(13, 1, 4, '2025-07-01', '2025-07-31'),
+(14, 9, 4, '2025-07-01', '2025-07-31'),
+(15, 4, 4, '2025-07-01', '2025-07-31'),
+(16, 10, 4, '2025-07-01', '2025-07-31'),
+(17, 2, 4, '2025-07-01', '2025-07-31'),
+(18, 9, 4, '2025-07-01', '2025-07-31'),
+(19, 1, 4, '2025-07-01', '2025-07-31'),
+(20, 10, 4, '2025-07-01', '2025-07-31');

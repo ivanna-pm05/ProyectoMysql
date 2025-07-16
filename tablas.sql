@@ -128,6 +128,7 @@ CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(60) UNIQUE,
     detail TEXT,
+    price DOUBLE
     category_id INT,
     image VARCHAR(80),
     CONSTRAINT FK_categorid FOREIGN KEY(category_id) REFERENCES categories(id)
@@ -198,4 +199,16 @@ CREATE TABLE IF NOT EXISTS rates (
     CONSTRAINT FK_comid FOREIGN KEY(company_id) REFERENCES companies(id),
     CONSTRAINT FK_polid FOREIGN KEY(poll_id) REFERENCES polls(id),
     PRIMARY KEY(customer_id, company_id, poll_id)
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS customers_memberships(
+    customer_id INT,
+    membership_id INT,
+    period_id INT,
+    start_date DATE,
+    end_date DATE,
+    CONSTRAINT FK_customer_id_membership FOREIGN KEY (customer_id) REFERENCES customers(id),
+    CONSTRAINT FK_period_id_customers FOREIGN KEY (period_id) REFERENCES periods(id),
+    CONSTRAINT FK_membership_id_customers FOREIGN KEY (membership_id) REFERENCES memberships(id),
+    PRIMARY KEY (customer_id, membership_id, period_id)
 ) ENGINE = INNODB;
