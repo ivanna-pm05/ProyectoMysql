@@ -128,8 +128,8 @@ CREATE TABLE IF NOT EXISTS products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(60) UNIQUE,
     detail TEXT,
-    price DOUBLE
     category_id INT,
+    price DOUBLE,
     image VARCHAR(80),
     CONSTRAINT FK_categorid FOREIGN KEY(category_id) REFERENCES categories(id)
 ) ENGINE = INNODB;
@@ -212,3 +212,10 @@ CREATE TABLE IF NOT EXISTS customers_memberships(
     CONSTRAINT FK_membership_id_customers FOREIGN KEY (membership_id) REFERENCES memberships(id),
     PRIMARY KEY (customer_id, membership_id, period_id)
 ) ENGINE = INNODB;
+
+ALTER TABLE companyproducts
+ADD COLUMN is_available BOOLEAN NOT NULL DEFAULT TRUE;
+
+ALTER TABLE customers
+ADD COLUMN membership_active BOOLEAN NOT NULL,
+ADD COLUMN is_active BOOLEAN NOT NULL;

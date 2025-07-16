@@ -2189,26 +2189,26 @@ INSERT INTO quality_products (product_id, customer_id, poll_id, company_id, date
 (20, 10, 20, 'COMP1036', '2025-12-31 23:59:00', 4.6);
 
 INSERT INTO companyproducts (company_id, product_id, price, unitofmeasure_id) VALUES
-('COMP1017', 1, 2499.99, 1),       -- Quantum Laptop X (antes 2199.99)
-('COMP1018', 2, 189.99, 7),         -- Trufa Negra Premium (antes 89.99)
-('COMP1019', 3, 49.99, 3),          -- Serum Vitamina C (igual)
-('COMP1020', 4, 89.99, 1),          -- Jeans Reciclados (antes 79.99)
-('COMP1021', 5, 129.99, 1),         -- Termostato Inteligente (igual)
-('COMP1022', 6, 599.99, 11),        -- Curso Blockchain Pro (antes 299.99)
-('COMP1023', 7, 1299.99, 12),       -- Almacenamiento Enterprise (antes 199.99)
-('COMP1024', 8, 149.99, 2),         -- Kit Robótica Educativa (antes 89.99)
-('COMP1025', 9, 799.99, 1),         -- Alerón Deportivo (antes 349.99)
-('COMP1026', 10, 3499.99, 1),       -- Violín Profesional (antes 1599.99)
-('COMP1027', 11, 219.99, 2),        -- Kit Hidroponía (antes 129.99)
-('COMP1028', 12, 79.99, 3),         -- Set Masajes Ayurveda (antes 59.99)
-('COMP1029', 13, 4599.99, 1),       -- Bicicleta de Montaña (antes 2499.99)
-('COMP1030', 14, 14.99, 4),         -- Suscripción BookClub (igual)
-('COMP1031', 15, 129.99, 1),        -- Cama Ortopédica Canina (igual)
-('COMP1032', 16, 299.99, 1),        -- Panel Solar 500W (igual)
-('COMP1033', 17, 129.99, 3),        -- Set Acuarelas Profesionales (antes 39.99)
-('COMP1034', 18, 1999.99, 13),      -- Experiencia Glaciar (antes 1799.99)
-('COMP1035', 19, 89.99, 2),         -- Kit Zero Waste (antes 49.99)
-('COMP1036', 20, 349.99, 1);        -- Monitor Cardíaco (antes 399.99)
+('COMP1017', 1, 2499.99, 1),      
+('COMP1018', 2, 189.99, 7),        
+('COMP1019', 3, 49.99, 3),        
+('COMP1020', 4, 89.99, 1),          
+('COMP1021', 5, 129.99, 1),        
+('COMP1022', 6, 599.99, 11),       
+('COMP1023', 7, 1299.99, 12),      
+('COMP1024', 8, 149.99, 2),        
+('COMP1025', 9, 799.99, 1),     
+('COMP1026', 10, 3499.99, 1),    
+('COMP1027', 11, 219.99, 2),      
+('COMP1028', 12, 79.99, 3),        
+('COMP1029', 13, 4599.99, 1),       
+('COMP1030', 14, 14.99, 4),         
+('COMP1031', 15, 129.99, 1),        
+('COMP1032', 16, 299.99, 1),        
+('COMP1033', 17, 129.99, 3),       
+('COMP1034', 18, 1999.99, 13),      
+('COMP1035', 19, 89.99, 2),         
+('COMP1036', 20, 349.99, 1);      
 
 INSERT INTO favorites (customer_id, company_id) VALUES
 (1, 'COMP1017'), (1, 'COMP1023'),
