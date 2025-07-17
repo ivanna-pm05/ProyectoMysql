@@ -1,6 +1,5 @@
 ## 2. Subconsultas
 
-CORREGIR LA 1 , 8, 10, 20 
 1. Como gerente, quiero ver los productos cuyo precio esté por encima del promedio de su categoría.
 ```sql
 SELECT 

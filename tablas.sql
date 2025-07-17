@@ -213,9 +213,109 @@ CREATE TABLE IF NOT EXISTS customers_memberships(
     PRIMARY KEY (customer_id, membership_id, period_id)
 ) ENGINE = INNODB;
 
+CREATE TABLE IF NOT EXISTS log_calificaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    customer_name VARCHAR(80),
+    product_id INT,
+    product_name VARCHAR(60),
+    company_id VARCHAR(20),
+    company_name VARCHAR(80),
+    rating DOUBLE NOT NULL,
+    poll_id INT,
+    poll_name VARCHAR(80),
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    detalles TEXT,
+    FOREIGN KEY (customer_id) REFERENCES customers(id),
+    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (company_id) REFERENCES companies(id),
+    FOREIGN KEY (poll_id) REFERENCES polls(id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS notificaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    mensaje TEXT NOT NULL,
+    fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    leida BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+) ENGINE=INNODB;
+
+CREATE TABLE IF NOT EXISTS bitacora_beneficios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_evento VARCHAR(20) NOT NULL,
+    tabla_afectada VARCHAR(20) NOT NULL, 
+    id_membresia INT NULL,
+    id_audiencia INT NULL,
+    id_beneficio INT NOT NULL,
+    id_periodo INT NULL,
+    usuario VARCHAR(50) NOT NULL,
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    detalles TEXT
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS polls_status_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    poll_id INT NOT NULL,
+    previous_status BOOLEAN NULL COMMENT 'Estado anterior (isactive)',
+    new_status BOOLEAN NOT NULL COMMENT 'Nuevo estado',
+    changed_by VARCHAR(50) NOT NULL COMMENT 'Usuario que realizó el cambio',
+    change_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    additional_notes TEXT,
+    FOREIGN KEY (poll_id) REFERENCES polls(id)
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS log_operaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    accion VARCHAR(20) NOT NULL,
+    tabla_afectada VARCHAR(30) NOT NULL,
+    id_afectado INT NOT NULL,
+    usuario VARCHAR(50) NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 ALTER TABLE companyproducts
 ADD COLUMN is_available BOOLEAN NOT NULL DEFAULT TRUE;
 
 ALTER TABLE customers
 ADD COLUMN membership_active BOOLEAN NOT NULL,
 ADD COLUMN is_active BOOLEAN NOT NULL;
+
+ALTER TABLE products
+ADD average_rating DECIMAL(3,2) DEFAULT NULL;
+
+CREATE TABLE IF NOT EXISTS errores_log (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descripcion TEXT,
+    fecha_error DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE customers_memberships
+ADD COLUMN payment_confirmed BOOLEAN DEFAULT FALSE,
+ADD COLUMN status VARCHAR(20) DEFAULT 'INACTIVA';
+
+CREATE TABLE IF NOT EXISTS poll_questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    poll_id INT NOT NULL,
+    question_text TEXT NOT NULL,
+    CONSTRAINT FK_polls_id FOREIGN KEY (poll_id) REFERENCES polls(id)
+) ENGINE = INNODB;
+
+ALTER TABLE details_favorites
+ADD COLUMN created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+CREATE TABLE IF NOT EXISTS historial_precios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    company_id VARCHAR(20) NOT NULL,
+    product_id INT NOT NULL,
+    old_price DOUBLE NOT NULL,
+    new_price DOUBLE NOT NULL,
+    changed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT FK_hist_company FOREIGN KEY (company_id) REFERENCES companies(id),
+    CONSTRAINT FK_hist_product FOREIGN KEY (product_id) REFERENCES products(id)
+) ENGINE=INNODB;
+
+ALTER TABLE polls
+ADD COLUMN start_date DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE products ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;

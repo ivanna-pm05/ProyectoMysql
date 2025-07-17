@@ -502,25 +502,22 @@ BEGIN
     DECLARE num_empresas INT;
     DECLARE num_productos INT;
 
-    -- Contar el número de empresas únicas en la ciudad
     SELECT COUNT(DISTINCT cp.company_id) 
     INTO num_empresas
     FROM companies c
     JOIN companyproducts cp ON c.id = cp.company_id
     WHERE c.city_id = city_id;
 
-    -- Contar el número de productos únicos en la ciudad
     SELECT COUNT(DISTINCT cp.product_id)
     INTO num_productos
     FROM companies c
     JOIN companyproducts cp ON c.id = cp.company_id
     WHERE c.city_id = city_id;
 
-    -- Calcular el índice de variedad
     IF num_empresas > 0 THEN
         RETURN num_productos / num_empresas;
     ELSE
-        RETURN 0;  -- Si no hay empresas, el índice es 0
+        RETURN 0; 
     END IF;
 END //
 
